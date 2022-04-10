@@ -34,8 +34,8 @@ First, we'll extract the assertion to a reusable helper:
 ```js
 import { redirect } from 'next-runtime';
 
-function assertIsAuthenticated(request) {
-  if (!user.request) {
+function assertIsAuthenticated(req) {
+  if (!req.user) {
     throw redirect('/login', 303);
   }
 }
